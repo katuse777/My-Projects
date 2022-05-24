@@ -18,9 +18,9 @@
       if(number is 1) return Paper
       else return scissor
   }*/
-const rock = 'Rock';
-const paper = 'Paper';
-const cut = 'Scissors';
+const rock = 'rock';
+const paper = 'paper';
+const cut = 'scissors';
 
 
 function number() {
@@ -49,9 +49,38 @@ and it must return a string that declares the winner of the round  */
   /*function oneRound(playerSelection, computerSelection) {
       call the playerSelection function and store the value in a variable.
       call the computerSelection function and store the value in a variable.
-      compare the computer result against the player result if on chose rock and the other
+      compare the computer result against the player result if one chose rock and the other
       chose paper, Paper wins. If one chose rock and the other chose scissors, Rock wins.
       If one chose scissors and the other chose paper than scissors wins and if they both chose
       the same, it's a draw
 
   } */
+
+  const playerPick = prompt('rock, paperor scissors');
+  const playerPlays = playerPick.toLowerCase();
+
+
+  function playAround(playerSelection = playerPlays, computerSelection = computerPlay) {
+
+      const playerChoice = playerSelection;
+      const computerChoice = computerSelection();
+      
+      if(playerChoice === rock && computerChoice === paper) {
+          return 'You lose, Paper beats Rock';
+      } else if(playerChoice === rock && computerChoice === cut) {
+          return 'You win, Rock beats Scissors';
+      } else if(playerChoice === cut && computerChoice === rock) {
+        return 'You Lose, Rock beats Scissors'
+      } else if(playerChoice === paper && computerChoice === rock) {
+        return 'You Win, Paper beats Rock';
+      } else if (playerChoice === paper && computerChoice === cut) {
+          return 'You lose, Scissors beats Paper'
+      } else if(playerChoice === cut && computerChoice === paper) {
+        return 'You Win, Scissors beats Paper'
+      } else if(playerChoice === computerChoice) {
+          return 'It\'s a draw';
+      } else {
+          return 'Please enter the either rock, Paper or scissor';
+      }
+  }
+  
