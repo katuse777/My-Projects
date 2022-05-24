@@ -38,3 +38,20 @@ function computerPlay() {
      }
 
 }
+
+/*Now i have to write  function that plays one round of rock, paper, scissors
+and the function should take in two parameters ,playerSelection and computerSelection
+and it must return a string that declares the winner of the round  */
+
+/*My function will take in two inputs, one will be player input and the other will be 
+  the computers input and once I have both inputs, I should compare them to see who won*/
+
+  /*function oneRound(playerSelection, computerSelection) {
+      call the playerSelection function and store the value in a variable.
+      call the computerSelection function and store the value in a variable.
+      compare the computer result against the player result if on chose rock and the other
+      chose paper, Paper wins. If one chose rock and the other chose scissors, Rock wins.
+      If one chose scissors and the other chose paper than scissors wins and if they both chose
+      the same, it's a draw
+
+  } */
