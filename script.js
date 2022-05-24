@@ -56,11 +56,11 @@ and it must return a string that declares the winner of the round  */
 
   } */
 
-  const playerPick = prompt('rock, paperor scissors');
+  const playerPick = prompt('rock, paper or scissors');
   const playerPlays = playerPick.toLowerCase();
 
 
-  function playAround(playerSelection = playerPlays, computerSelection = computerPlay) {
+  function playRound(playerSelection = playerPlays, computerSelection = computerPlay) {
 
       const playerChoice = playerSelection;
       const computerChoice = computerSelection();
@@ -80,7 +80,20 @@ and it must return a string that declares the winner of the round  */
       } else if(playerChoice === computerChoice) {
           return 'It\'s a draw';
       } else {
-          return 'Please enter the either rock, Paper or scissor';
+          return 'Please enter either rock, Paper or scissor';
       }
   }
   
+  /*I have to write a new function called game(). Call the playRound function inside of this 
+  one to play a 5 round game that keeps score and reports a winner or loser at the end. */
+
+  /*I have to make a function caalled game() and it must call the playRound() function 5 times
+    and each time it loops the score of the player/computer has to be incremmented  depending on who won the 
+    previous round */
+
+  /*first mke a function called game() that calls the playRound function 5 times.
+    I'll use a for loop to call the playaRound function
+    function game() {
+        let [i] equal to 1 and as long as [i] is less than or equal to five keep on calling the playRound()
+         function but on ech iteration, incremment [i] 
+    } */
