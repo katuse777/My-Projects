@@ -18,6 +18,23 @@
       if(number is 1) return Paper
       else return scissor
   }*/
+const rock = 'Rock';
+const paper = 'Paper';
+const cut = 'Scissors';
+
+
+function number() {
+    return Math.floor(Math.random()*3);
+}
+
 function computerPlay() {
+    const value = number();
+     if(value === 0) {
+         return rock;
+     } else if (value === 1) {
+         return paper;
+     } else {
+         return cut;
+     }
 
 }
