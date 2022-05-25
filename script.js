@@ -70,13 +70,13 @@ and it must return a string that declares the winner of the round  */
       } else if(playerChoice === rock && computerChoice === cut) {
           return 'You win, Rock beats Scissors';
       } else if(playerChoice === cut && computerChoice === rock) {
-        return 'You Lose, Rock beats Scissors'
+        return 'You Lose, Rock beats Scissors';
       } else if(playerChoice === paper && computerChoice === rock) {
         return 'You Win, Paper beats Rock';
       } else if (playerChoice === paper && computerChoice === cut) {
-          return 'You lose, Scissors beats Paper'
+          return 'You lose, Scissors beats Paper';
       } else if(playerChoice === cut && computerChoice === paper) {
-        return 'You Win, Scissors beats Paper'
+        return 'You Win, Scissors beats Paper';
       } else if(playerChoice === computerChoice) {
           return 'It\'s a draw';
       } else {
@@ -103,14 +103,38 @@ and it must return a string that declares the winner of the round  */
       and ask's either rock, paper or scissors and and if i write any of the three, the function will return a string
       telling if i won or not and it will tell me why i won or lost... e.g You won, Rock beats scissors  */
 
-      /*The next problem is to get the computer to console log the score everytime i play the game 
+    /*The next problem is to get the computer to console log the score everytime i play the game 
         right now should i call the game() function a prompt will appear and ask for user input and after making a choice
         another prompt will appear, So what i want to happen is that before the next prompt appears, the computer should tell
         me if i won or not*/
+
+    /*The next problem is keeping score, the computer should assign a score to both the player and the computer and the score 
+      of the player or the computer should increase depending on who won the round IF it was a draw the score will remain the same*/
+    /*To solve the score problem i want to use either a switch statement or if... else statements to make the computer decide who's 
+      score should increase */ 
+    /*The playRound() function will return a string that declares theat the  player won or lost so the conditional should check
+      if the player won, lost or drew and decide who's score to increase  */  
     function game() {
-      for(let i = 1; i <=5; i++) {
-        playRound();
-        console.log(playRound());
-      }
+      let compScore = 0
+      let playerScore = 0
+      for(let i = 1; i <= 5; i++) {
+          const result = playRound();
+          if(result === 'You lose, Paper beats Rock' || result === 'You Lose, Rock beats Scissors' || result === 'You lose, Scissors beats Paper') {
+            compScore++;
+            console.log(result);
+            console.log(compScore);
+            console.log(playerScore);
+          } else if(result === 'You Win, Scissors beats Paper' || result === 'You Win, Paper beats Rock' || result === 'You win, Rock beats Scissors') {
+            playerScore++;
+            console.log(result);
+            console.log(compScore);
+            console.log(playerScore);
+          } else {
+            console.log();
+            console.log(compScore);
+            console.log(playerScore);
+          }
+        }
+      
       return playRound();
     }
