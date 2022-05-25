@@ -56,11 +56,11 @@ and it must return a string that declares the winner of the round  */
 
   } */
 
-  const playerPick = prompt('rock, paper or scissors');
-  const playerPlays = playerPick.toLowerCase();
+  
 
 
-  function playRound(playerSelection = playerPlays, computerSelection = computerPlay) {
+  function playRound(playerSelection = prompt('rock, paper or scissors'), computerSelection = computerPlay) {
+      const playerPlays = playerSelection.toLowerCase();
 
       const playerChoice = playerSelection;
       const computerChoice = computerSelection();
@@ -97,3 +97,10 @@ and it must return a string that declares the winner of the round  */
         let [i] equal to 1 and as long as [i] is less than or equal to five keep on calling the playRound()
          function but on ech iteration, incremment [i] 
     } */
+
+    function game() {
+      for(let i = 1; i <=5; i++) {
+       playRound();
+      }
+      return playRound();
+    }
