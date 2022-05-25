@@ -102,9 +102,15 @@ and it must return a string that declares the winner of the round  */
     /*Now my playRound() function is working just fine, when I call the playRound() function, a prompt pop's up
       and ask's either rock, paper or scissors and and if i write any of the three, the function will return a string
       telling if i won or not and it will tell me why i won or lost... e.g You won, Rock beats scissors  */
+
+      /*The next problem is to get the computer to console log the score everytime i play the game 
+        right now should i call the game() function a prompt will appear and ask for user input and after making a choice
+        another prompt will appear, So what i want to happen is that before the next prompt appears, the computer should tell
+        me if i won or not*/
     function game() {
       for(let i = 1; i <=5; i++) {
-       playRound();
+        playRound();
+        console.log(playRound());
       }
       return playRound();
     }
