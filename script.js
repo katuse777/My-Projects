@@ -62,7 +62,7 @@ and it must return a string that declares the winner of the round  */
   function playRound(playerSelection = prompt('rock, paper or scissors'), computerSelection = computerPlay) {
       const playerPlays = playerSelection.toLowerCase();
 
-      const playerChoice = playerSelection;
+      const playerChoice = playerPlays;
       const computerChoice = computerSelection();
       
       if(playerChoice === rock && computerChoice === paper) {
@@ -98,6 +98,10 @@ and it must return a string that declares the winner of the round  */
          function but on ech iteration, incremment [i] 
     } */
 
+
+    /*Now my playRound() function is working just fine, when I call the playRound() function, a prompt pop's up
+      and ask's either rock, paper or scissors and and if i write any of the three, the function will return a string
+      telling if i won or not and it will tell me why i won or lost... e.g You won, Rock beats scissors  */
     function game() {
       for(let i = 1; i <=5; i++) {
        playRound();
