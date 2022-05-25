@@ -114,6 +114,15 @@ and it must return a string that declares the winner of the round  */
       score should increase */ 
     /*The playRound() function will return a string that declares theat the  player won or lost so the conditional should check
       if the player won, lost or drew and decide who's score to increase  */  
+
+      /*Now the final problem is making the computer check the score and declare who won */
+
+      /*I know that by the time the loop is finished the scores will be finalised meaning that the playerScore and compScore
+       variables will have new values that aren't zero provided that the result wasn't five draws in a row */
+
+       /*if playerScore is Greater than compScore, then console playerScore and the text 'You won!' but 
+       if playerScore is less than compScore, then console log the compScore and the text "This proves that computers are superior to man"
+       but if playerScore is equal to compScore than console log the text 'We both Won!'  */
     function game() {
       let compScore = 0
       let playerScore = 0
@@ -130,11 +139,21 @@ and it must return a string that declares the winner of the round  */
             console.log(compScore);
             console.log(playerScore);
           } else {
-            console.log();
+            console.log('It\'s a draw');
             console.log(compScore);
             console.log(playerScore);
           }
         }
       
-      return playRound();
+      if(playerScore > compScore) {
+        console.log(`Your Score is: ${playerScore}, Congrats Champ`)
+        return 'WINNER!';
+      }  else if(compScore > playerScore) {
+        console.log(`Sorry but compScore:${compScore} is better than your score`)
+        return 'LOSER!!';
+      } else {
+        console.log(`It's a draw.`)
+        return 'DRAW!!!';
+      }
+      
     }
