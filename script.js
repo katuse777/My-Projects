@@ -59,25 +59,32 @@ and it must return a string that declares the winner of the round  */
   
 
 
-  function playRound(playerSelection = prompt('rock, paper or scissors'), computerSelection = computerPlay) {
+  function playRound(playerSelection, computerSelection = computerPlay) {
       const playerPlays = playerSelection.toLowerCase();
 
       const playerChoice = playerPlays;
       const computerChoice = computerSelection();
       
       if(playerChoice === rock && computerChoice === paper) {
+          console.log(`You lose, Paper beats Rock`);
           return 'You lose, Paper beats Rock';
       } else if(playerChoice === rock && computerChoice === cut) {
+          console.log(`You win, Rock beats Scissors`);
           return 'You win, Rock beats Scissors';
       } else if(playerChoice === cut && computerChoice === rock) {
-        return 'You Lose, Rock beats Scissors';
+          console.log(`You Lose, Rock beats Scissors`);
+          return 'You Lose, Rock beats Scissors';
       } else if(playerChoice === paper && computerChoice === rock) {
-        return 'You Win, Paper beats Rock';
+          console.log(`You Win, Paper beats Rock`);
+          return 'You Win, Paper beats Rock';
       } else if (playerChoice === paper && computerChoice === cut) {
+          console.log(`You lose, Scissors beats Paper`);
           return 'You lose, Scissors beats Paper';
       } else if(playerChoice === cut && computerChoice === paper) {
-        return 'You Win, Scissors beats Paper';
+          console.log(`You Win, Scissors beats Paper`);
+          return 'You Win, Scissors beats Paper';
       } else if(playerChoice === computerChoice) {
+          console.log(`It's a draw`);
           return 'It\'s a draw';
       } else {
           return 'Please enter either rock, Paper or scissor';
@@ -124,7 +131,7 @@ and it must return a string that declares the winner of the round  */
        if playerScore is less than compScore, then console log the compScore and the text "This proves that computers are superior to man"
        but if playerScore is equal to compScore than console log the text 'We both Won!'  */
 
-       
+
    /* function game() {
         let compScore = 0
         let playerScore = 0
@@ -159,3 +166,17 @@ and it must return a string that declares the winner of the round  */
         }
       
       } */
+
+      const rockButton = document.querySelector('button');
+      const paperButton = rockButton.nextElementSibling;
+      const scissorsButton = paperButton.nextElementSibling;
+
+      rockButton.addEventListener('click', () => {
+        playRound(rock);
+      })
+      paperButton.addEventListener('click', () => {
+        playRound(paper);
+      })
+      scissorsButton.addEventListener('click', () => {
+        playRound(cut);
+      })
