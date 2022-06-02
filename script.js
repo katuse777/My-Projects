@@ -131,10 +131,11 @@ and it must return a string that declares the winner of the round  */
        if playerScore is less than compScore, then console log the compScore and the text "This proves that computers are superior to man"
        but if playerScore is equal to compScore than console log the text 'We both Won!'  */
 
+       let compScore = 0
+       let playerScore = 0
 
     function game(choice) {
-          let compScore = 0
-          let playerScore = 0
+          
             const result = playRound(choice);
             if(result === 'You lose, Paper beats Rock' || result === 'You Lose, Rock beats Scissors' || result === 'You lose, Scissors beats Paper') {
               compScore++;
@@ -151,6 +152,7 @@ and it must return a string that declares the winner of the round  */
               console.log(compScore);
               console.log(playerScore);
             }
+            return compScore
       } 
 
       const rockButton = document.querySelector('button');
