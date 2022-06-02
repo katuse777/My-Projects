@@ -56,35 +56,35 @@ and it must return a string that declares the winner of the round  */
 
   } */
 
-  
-
+  const div = document.querySelector('div');
+  div.textContent = 'Result: '
 
   function playRound(playerSelection, computerSelection = computerPlay) {
-      const playerPlays = playerSelection.toLowerCase();
+      const playerPlays = playerSelection;
 
       const playerChoice = playerPlays;
       const computerChoice = computerSelection();
       
       if(playerChoice === rock && computerChoice === paper) {
-          console.log(`You lose, Paper beats Rock`);
+          div.textContent = `You lose, Paper beats Rock`;
           return 'You lose, Paper beats Rock';
       } else if(playerChoice === rock && computerChoice === cut) {
-          console.log(`You win, Rock beats Scissors`);
+          div.textContent = `You win, Rock beats Scissors`;
           return 'You win, Rock beats Scissors';
       } else if(playerChoice === cut && computerChoice === rock) {
-          console.log(`You Lose, Rock beats Scissors`);
+          div.textContent = `You Lose, Rock beats Scissors`;
           return 'You Lose, Rock beats Scissors';
       } else if(playerChoice === paper && computerChoice === rock) {
-          console.log(`You Win, Paper beats Rock`);
+          div.textContent = `You Win, Paper beats Rock`;
           return 'You Win, Paper beats Rock';
       } else if (playerChoice === paper && computerChoice === cut) {
-          console.log(`You lose, Scissors beats Paper`);
+          div.textContent = `You lose, Scissors beats Paper`;
           return 'You lose, Scissors beats Paper';
       } else if(playerChoice === cut && computerChoice === paper) {
-          console.log(`You Win, Scissors beats Paper`);
+          div.textContent = `You Win, Scissors beats Paper`;
           return 'You Win, Scissors beats Paper';
       } else if(playerChoice === computerChoice) {
-          console.log(`It's a draw`);
+          div.textContent = `It's a draw`;
           return 'It\'s a draw';
       } else {
           return 'Please enter either rock, Paper or scissor';
@@ -132,11 +132,10 @@ and it must return a string that declares the winner of the round  */
        but if playerScore is equal to compScore than console log the text 'We both Won!'  */
 
 
-   /* function game() {
-        let compScore = 0
-        let playerScore = 0
-        for(let i = 1; i <= 5; i++) {
-            const result = playRound();
+    function game(choice) {
+          let compScore = 0
+          let playerScore = 0
+            const result = playRound(choice);
             if(result === 'You lose, Paper beats Rock' || result === 'You Lose, Rock beats Scissors' || result === 'You lose, Scissors beats Paper') {
               compScore++;
               console.log(result);
@@ -152,31 +151,18 @@ and it must return a string that declares the winner of the round  */
               console.log(compScore);
               console.log(playerScore);
             }
-          }
-        
-        if(playerScore > compScore) {
-          console.log(`Your Score is: ${playerScore}, Congrats Champ`)
-          return 'WINNER!';
-        }  else if(compScore > playerScore) {
-          console.log(`Sorry but compScore:${compScore} is better than your score`)
-          return 'LOSER!!';
-        } else {
-          console.log(`It's a draw.`)
-          return 'DRAW!!!';
-        }
-      
-      } */
+      } 
 
       const rockButton = document.querySelector('button');
       const paperButton = rockButton.nextElementSibling;
       const scissorsButton = paperButton.nextElementSibling;
 
       rockButton.addEventListener('click', () => {
-        playRound(rock);
+        game(rock);
       })
       paperButton.addEventListener('click', () => {
-        playRound(paper);
+        game(paper);
       })
       scissorsButton.addEventListener('click', () => {
-        playRound(cut);
+        game(cut);
       })
