@@ -133,32 +133,32 @@ but if playerScore is equal to compScore than console log the text 'We both Won!
 
 let compScore = 0
 let playerScore = 0
+const player = document.querySelector('#player');
+const comp = document.querySelector('#comp');
 
 function game(choice) {
   const result = playRound(choice);
   if (result === 'You lose, Paper beats Rock' || result === 'You Lose, Rock beats Scissors' || result === 'You lose, Scissors beats Paper') {
     compScore++;
-    console.log(result);
-    console.log(compScore);
-    console.log(playerScore);
+    comp.textContent = 'Computer Score: ' + compScore;
+    player.textContent = 'Player Score: ' +  playerScore;
   } else if (result === 'You Win, Scissors beats Paper' || result === 'You Win, Paper beats Rock' || result === 'You win, Rock beats Scissors') {
     playerScore++;
-    console.log(result);
-    console.log(compScore);
-    console.log(playerScore);
+    comp.textContent = 'Computer Score: ' + compScore;
+    player.textContent = 'Player Score: ' +  playerScore;
   } else {
-    console.log('It\'s a draw');
-    console.log(compScore);
-    console.log(playerScore);
+    comp.textContent = 'Computer Score: ' + compScore;
+    player.textContent = 'Player Score: ' +  playerScore;
   }
+  
 
   if (compScore === 5) {
-    console.log(`Sorry, You lose`);
+    div.textContent = `Sorry, You lose`;
     compScore = 0;
     playerScore = 0;
     return;
   } else if (playerScore === 5) {
-    console.log(`Congrats CHAMP!!`);
+    div.textContent = `Congrats CHAMP!!`;
     compScore = 0;
     playerScore = 0;
     return;
